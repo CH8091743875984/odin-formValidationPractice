@@ -10,18 +10,42 @@
   <body>
     <div class="container">
       <h2>Form Practice!</h2>
-      <form id="myForm">
+      <form id="myForm" novalidate>
         <div class="formInputs">
           <label for="email">Email</label>
-          <input id="email" type="email" name="Email" />
+          <input id="email" type="email" name="Email" required />
+          <span class="error"></span>
           <label for="country">Country</label>
-          <input id="country" type="text" name="Country" />
+          <input
+            id="country"
+            type="text"
+            name="Country"
+            maxlength="25"
+            required
+          />
+          <span class="error"></span>
           <label for="zipcode">Zip Code</label>
-          <input id="zipcode" type="text" name="Zip Code" />
+          <input
+            id="zipcode"
+            type="text"
+            name="Zip Code"
+            minlength="5"
+            maxlength="5"
+            pattern="^\d{5}$"
+            required
+          />
+          <span class="error"></span>
           <label for="password">Password</label>
-          <input id="password" type="text" name="Password" />
+          <input id="password" type="text" name="Password" required />
+          <span class="error"></span>
           <label for="passwordConfirm">Confirm Password</label>
-          <input id="passwordConfirm" type="text" name="Confirm Password" />
+          <input
+            id="passwordConfirm"
+            type="text"
+            name="Confirm Password"
+            required
+          />
+          <span class="error"></span>
         </div>
         <div class="formButtons">
           <button id="submitButton" form="myForm" type="submit">Submit</button>

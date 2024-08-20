@@ -2,3 +2,21 @@
   border: 1px solid black;
   background-color: rgb(240, 240, 240);
 }
+
+.formInputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.formInputs > * {
+  margin: 5px;
+}
+
+input:invalid {
+  border: 1px solid red;
+  background-color: lightcoral;
+}
+
+input:focus:invalid {
+  outline: none;
+}
