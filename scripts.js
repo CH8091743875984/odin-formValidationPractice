@@ -23,7 +23,15 @@ const passwordConfirmError = document.querySelector(
   "#passwordConfirm + span.error"
 );
 
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
+//   const passwordValid = checkPasswordRequirements();
+//   password.className = passwordValid ? "valid" : "invalid";
+
+//   const passwordMatch = checkPasswordMatch();
+//   passwordConfirm.className = passwordMatch ? "valid" : "invalid";
+// });
+
+password.addEventListener("input", (event) => {
   const passwordValid = checkPasswordRequirements();
   password.className = passwordValid ? "valid" : "invalid";
 
@@ -95,8 +103,8 @@ form.addEventListener("submit", (event) => {
     showErrorZipcode();
   }
 
-  const isValidPassword = checkPasswordRequirements(password.textContent);
-  if (!isValidPassword) {
+  const isValidPassword = checkPasswordRequirements(password.value);
+  if (isValidPassword) {
     password.className = "valid";
     passwordError.textContent = "";
     passwordError.className = "error";
